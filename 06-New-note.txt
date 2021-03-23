@@ -1,0 +1,27 @@
+
+
+LINK ==>  https://www.websequencediagrams.com/?lz=dGl0bGUgMDYgTmV3IE5vdGUKCm5vdGUgb3ZlciBicm93c2VyOgpCAAMGIFBPU1QgRGF0YSBPYmplY3QgCmluY2x1ZGluZyBjb250ZW50IGFuZCBkYXRlIAphbmQgdGltZSB3aXRoAAUFem9uZQplbmQgbgBlBQBZBy0-c2VydmVyOiBIVFRQAF8GaHR0cHM6Ly9zdHVkaWVzLmNzLmhlbHNpbmtpLmZpL2V4YW1wbGVhcHAvbmV3X25vdGVfc3BhCgoARAYtLT4AgTQIIEpTT04AgS8FAIFFFXJlc3BvbnNlAIE6BWFpbnMAJgoACwhpbmcgCmZpZWxkPSdtZXNzYWdlJwCBYQV2YWx1ZT0iAIIrBWNyZWF0ZWQiCgCBZwVSAEwKZGUgMjAxAIFqCwoK&s=default
+
+
+///////////////////////////////////////////////////////////////////////////
+title 06 New Note
+
+note over browser:
+Browser POST Data Object 
+including content and date 
+and time with timezone
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+server-->browser: JSON Data
+
+note over browser:
+response contains JSON Data containing 
+field='message' and value="note created"
+with Response code 201
+end note
+
+
+
+///////////////////////////////////////////////////////////////////////////

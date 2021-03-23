@@ -1,0 +1,32 @@
+
+LINK ==> https://www.websequencediagrams.com/?lz=dGl0bGUgU2luZ2xlIHBhZ2UgYXBwCmJyb3dzZXItPnNlcnZlcjogSFRUUCBHRVQgaHR0cHM6Ly9zdHVkaWVzLmNzLmhlbHNpbmtpLmZpL2V4YW1wbGVhcHAvc3BhCgA5Bi0tPgBKBzogSFRNTC1jb2RlCgpub3RlIG92ZXIgABYIACkHIHNlbmRzACYFIGZpbGUgaGF2aW5nIG1haW4uY3NzCmFuZCBzcGEuanMgaW4gaGlzIGhlYWRlciBzbwBECCAKcmVxdWVzdHMgZm9yADIJIAAxCgplbmQgbm90ZQCBKUUAgRMJAIFhEgCBLgkAgg9ILmoAUxQAgU8HAIJDFACCDAhzdGFydHMgZXhlY3V0aW5nIGpzAIMGBnRoYXQgAIIoCUpTT04gZGF0YSBmcm9tIACDDgcAgiYKAINaRWRhdGEuanNvbgCEEhNbeyJjb250ZW50IjoiYXNkZmciLCJkYXRlIjoiMjAyMS0wMy0yM1QxNDozMTo0NS4wMDJaIn0sLi4uXQCBYx0AgXMGZXMgdGhlIGV2ZW50IGhhbmRsZXIAgXoIbmRlcnMAhBEFcyB0byBkaXNwbGF5AIQhCg&s=default
+
+////////////////////////////////////////////////////////////
+title Single page app
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML-code
+
+note over browser:
+server sends HTML file having main.css
+and spa.js in his header so browser 
+requests for main.css and spa.js
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{"content":"asdfg","date":"2021-03-23T14:31:45.002Z"},...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+///////////////////////////////////////////////////////////

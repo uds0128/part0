@@ -1,0 +1,44 @@
+
+
+LINK ==> https://www.websequencediagrams.com/?lz=dGl0bGUgbmV3IG5vdGUKYnJvd3Nlci0-c2VydmVyOiBIVFRQIFBPU1QgaHR0cHM6Ly9zdHVkaWVzLmNzLmhlbHNpbmtpLmZpL2V4YW1wbGVhcHAvbmV3XwBJBQA_Bi0tPgBQBzogSFRNTC1jb2RlCgpub3RlIG92ZXIgABYIACkHIHJlc3BvbmRzIHdpdGggc3RhdHVzIGNvZGUgMzAyIHdoaWNoCnRlbGxzADIIIHRvIHJlZGlyZWN0IGF0IHNlbmRlZCB1cmwKACkFIGlzAIFaBXMgcGFnZQplbmQAgVIcR0UAgUAtb3RlcwCBOTFhcwCBXwdzZSBvZiAAQAYgaGFzIG1haW4uY3NzIGFuZAAHBmpzCml0IHdpbGwAgVQFIHJlcXVlc3QgdG8gAIIqB2ZvciB0aGlzIHR3byBmaWxlcwCBFk4AgQwIAIM-EwASCQAfSWoAThlqcwCEIRUAg30Ic3RhcnRzIGV4ZWN1dGluZyBqcwCEZQZ0aGF0AIIuCHMgSlNPTiBkYXRhIGZyb20AgjsIAIQLCgCDUUVkYXRhLmpzb24AhXETW3siY29udGVudCI6InNhZmRhc2ZhIiwiZGF0ZSI6IjIwMjEtMDMtMjNUMTQ6MjE6MjIuOTAyWiJ9LC4uLl0AgWYdAIF2BmVzIHRoZSBldmVudCBoYW5kbGVyAIF9CG5kZXIAhgUIdG8gZGlzcGxheQCBcwsK&s=default
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+title new note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTML-code
+
+note over browser:
+server responds with status code 302 which
+tells browser to redirect at sended url
+which is notes page
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+
+note over browser:
+as response of /notes has main.css and main.js
+it will send request to server for this two files
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{"content":"safdasfa","date":"2021-03-23T14:21:22.902Z"},...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+
+///////////////////////////////////////////////////////////////////////////////
+
